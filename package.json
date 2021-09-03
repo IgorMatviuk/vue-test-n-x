@@ -1,0 +1,41 @@
+{
+  "name": "test-vue",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/auth": "^4.9.1",
+    "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/bootstrap-vue": "^2.0.4",
+    "@types/vuelidate": "^0.7.15",
+    "bcrypt-nodejs": "^0.0.3",
+    "bootstrap-vue": "^2.21.2",
+    "cookie": "^0.3.1",
+    "core-js": "^2.6.10",
+    "express": "^4.17.1",
+    "fs": "^0.0.1-security",
+    "js-cookie": "^2.2.1",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^3.1.2",
+    "mongoose": "^5.13.7",
+    "net": "^1.0.2",
+    "nuxt": "^2.15.7",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "v": "^0.3.0",
+    "vue-draggable-resizable": "^2.3.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/vuetify": "^1.12.1",
+    "fibers": "^5.0.0",
+    "pug": "^3.0.2",
+    "pug-plain-loader": "^1.1.0",
+    "sass": "^1.38.0",
+    "sass-loader": "^10.2.0"
+  }
+}

@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+$theme-color: #c0392b;
+
+.gradient{
+    background: rgb(192,57,43);
+    background: linear-gradient(119deg, rgba(192,57,43,1) 37%, rgba(231,76,60,1) 86%);
+}
+
+.based-button{
+    display: flex;
+    justify-content: center;
+    width: auto;
+    height: 30px;
+    background-color: $theme-color;
+    color: #FFFFFF;
+    border: solid 2px #FFFFFF;
+    border-radius: 15px;
+}
+
+.based-button p{
+    margin: 0px 10px 0px 10px;
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+}
+
+.popup-close{
+    display: flex;
+    width: 30px;
+    height: 30px;
+    background-color: #c0392b;
+}
+
+.based-shadow{
+    -webkit-box-shadow: 8px 11px 10px 6px rgba(34, 60, 80, 0.21);
+    -moz-box-shadow: 8px 11px 10px 6px rgba(34, 60, 80, 0.21);
+    box-shadow: 8px 11px 10px 6px rgba(34, 60, 80, 0.21);
+}
