@@ -11,6 +11,63 @@
         </div>
       </div>
       <div class="header__container__right">
+
+        <div class="header__container__right__lang">
+          <div class="header__container__right__lang__select">
+            <!--
+            <select name="" id="">
+              <option value="">    
+                <nuxt-link
+                v-if="$i18n.locale !== 'en'"
+                :to="switchLocalePath('en')"
+                >English
+                </nuxt-link>
+                </option>
+              <option value="">
+                <nuxt-link
+                  v-if="$i18n.locale !== 'ru'"
+                  :to="switchLocalePath('ru')"
+                >Русский
+                </nuxt-link>
+              </option>
+              <option value="">
+                <nuxt-link
+                  v-if="$i18n.locale !== 'is'"
+                  :to="switchLocalePath('is')"
+                  >Меджусловјанскы
+                  </nuxt-link>
+                </option>
+            </select>
+            -->
+
+            <!--
+    <nuxt-link
+      v-if="$i18n.locale !== 'en'"
+      :to="switchLocalePath('en')"
+    >
+      English
+    </nuxt-link>
+
+    <nuxt-link
+      v-if="$i18n.locale !== 'ru'"
+      :to="switchLocalePath('ru')"
+    > 
+      Русский
+    </nuxt-link>
+        <nuxt-link
+      v-if="$i18n.locale !== 'is'"
+      :to="switchLocalePath('is')"
+    >
+      Меджусловјанскы
+    </nuxt-link>
+-->     <div style="color: #FFFFFF;"><h3>{{ $t("lang") }}</h3></div>
+        <select v-model="$i18n.locale">
+      <option v-for="(lang, i) in langs" :key="`Lang${i}`" :value="lang" >
+        {{ lang }}
+      </option>
+    </select>
+          </div>
+        </div>
         <div class="header__container__right__buttons">
           <div class="based-button">
             <p @click="showPopupLogin" >Войти</p>
@@ -43,6 +100,7 @@ export default {
     return {
       IsPopupLoginShow: false,
       IsPopupRegistrationShow: false,
+      langs: ['ru', 'en', 'is'],
     }
   },
 
@@ -74,7 +132,8 @@ export default {
 .header{
     display: flex;
     height: 120px;
-    background-color: #c0392b;
+    /*background-color: #c0392b;*/
+    background-color: black;
     width: 100%;
     &__container{
       display: flex;
@@ -96,6 +155,16 @@ export default {
       }
       &__right{
         display: flex;
+        &__lang{
+          display:flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0px 30px 0px 0px;
+          select{
+            display: flex;
+            width: 165px;
+          }
+        }
         &__buttons{
           display: flex;
           flex-direction: column;

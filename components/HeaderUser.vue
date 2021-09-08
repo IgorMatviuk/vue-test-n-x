@@ -75,38 +75,38 @@ export default {
 
 <style lang="scss">
 .header{
+  display: flex;
+  height: 120px;
+  background-color: black;
+  width: 100%;
+  &__container{
     display: flex;
-    height: 120px;
-    background-color: #c0392b;
     width: 100%;
-    &__container{
+    justify-content: space-between;
+    margin: 20px 50px 0px 50px;
+    &__left{
       display: flex;
-      width: 100%;
-      justify-content: space-between;
-      margin: 20px 50px 0px 50px;
-      &__left{
+    }
+    &__center{
+      display: flex;
+      &__menu{
         display: flex;
-      }
-      &__center{
-        display: flex;
-        &__menu{
-          display: flex;
-          &__item a{
-            color: #FFFFFF;
-            
-          }
-        }
-      }
-      &__right{
-        display: flex;
-        &__buttons{
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          height: 80px;
+        &__item a{
+          color: #FFFFFF;
+          
         }
       }
     }
+    &__right{
+      display: flex;
+      &__buttons{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 80px;
+      }
+    }
+  }
 
   a.nuxt-link-active {
     color: #bdc3c7;

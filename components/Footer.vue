@@ -13,6 +13,6 @@ export default {
         display: flex;
         height: 120px;
         width: 100%;
-        background-color: #c0392b;
+        background-color: black;
     }
 </style>

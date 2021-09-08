@@ -39,8 +39,48 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/bootstrap-vue',
+    [
+      '@nuxtjs/i18n',
+      {
+        locales: ['ru', 'en', 'is'],
+        defaultLocale: 'ru',
+        vueI18n: {
+          fallbackLocale: 'ru',
+          messages: {
+            ru:{
+              hello: 'Привет',
+              lang: 'Русский'
+            },
+            en:{
+              hello: 'Hello',
+              lang: 'English'
+            },
+            is:{
+              hello: 'Здравѣј',
+              lang: 'Меджусловјанскы'
+            },
+          }
+        }
+      }
+    ]
   ],
-
+/*
+  i18n: {
+    locales: ['en', 'ru', 'is'],
+    fallbackLocale: 'ru',
+    messages: {
+      en:{
+        hello: 'Hello'
+      },
+      ru:{
+        hello: 'Привет'
+      },
+      is:{
+        hello: 'Здравѣј' 
+      },
+    }
+  },
+*/
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 

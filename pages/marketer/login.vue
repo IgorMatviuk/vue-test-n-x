@@ -1,7 +1,5 @@
 <template>
-  <div class="">
-      Создать пользователя
-      <div class="">
+  <div>
     <b-form @submit="onSubmit">
       <b-form-group
         id="input-group-1"
@@ -26,19 +24,14 @@
         ></b-form-input>
       </b-form-group>
 
-      <b-button type="submit" variant="primary">Создать</b-button>
+      <b-button type="submit" variant="primary">Войти</b-button>
     </b-form>
-      </div>
   </div>
 </template>
 
-
-
 <script>
-export default {
-    layout: 'admin',
-    middleware: ['admin-auth'],
-        data() {
+  export default {
+    data() {
       return {
         loginForm: {
           login: '',
@@ -58,17 +51,13 @@ export default {
         event.preventDefault()
         const formData = {
           login: this.loginForm.login,
-          password: this.loginForm.password,
+          password: this.loginForm.password
         }
         console.log(formData)
         console.log(JSON.stringify(this.loginForm))
-        await this.$store.dispatch('auth/createMarketer', formData) 
-        console.log('пользователь создан')
+        await this.$store.dispatch('auth/loginMarketer', formData) 
+        this.$router.push('/marketer')
       }
     }
-}
+  }
 </script>
-
-<style>
-
-</style>

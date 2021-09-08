@@ -2,7 +2,7 @@ import Cookie from 'cookie'
 import Cookies from "js-cookie"
 import jwtDecode from 'jwt-decode'
 
-const backAPI = 'http://localhost:54107/'
+const backAPI = 'http://localhost:55034/'
 
 export const state = () => ({
   token: null
@@ -17,7 +17,7 @@ export const mutations = {
   }
 }
 
-export const actions = {
+export const actions = {    
   async loginAdmin({commit, dispatch}, formData) {
     try {
       const {token} = await this.$axios.$post(`${backAPI}backend/auth/admin/login`, formData)
@@ -28,6 +28,7 @@ export const actions = {
       throw e
     }
   },
+
   async createAdmin({commit}, formData) {
     try {
       this.$axios.$post(`${backAPI}backend/auth/admin/create`, formData)
@@ -36,6 +37,7 @@ export const actions = {
       throw e
     }
   },
+
   async loginUser({commit, dispatch}, formData) {
     try {
       const {token} = await this.$axios.$post(`${backAPI}backend/auth/user/log`, formData)
@@ -46,6 +48,7 @@ export const actions = {
       throw e
     }
   },
+
   async createUser({commit}, formData) {
     try {
       this.$axios.$post(`${backAPI}backend/auth/user/create`, formData)
@@ -54,6 +57,27 @@ export const actions = {
       throw e
     }
   },
+
+  async loginMarketer({commit, dispatch}, formData) {
+    try {
+      const {token} = await this.$axios.$post(`${backAPI}backend/auth/marketer/login`, formData)
+
+      dispatch('setToken', token)
+    } catch (e) {
+      commit('setError', e, {root: true})
+      throw e
+    }
+  },
+
+  async createMarketer({commit}, formData) {
+    try {
+      this.$axios.$post(`${backAPI}backend/auth/marketer/create`, formData)
+    } catch (e) {
+      commit('setError', e, {root: true})
+      throw e
+    }
+  },
+
   setToken({commit}, token) {
     this.$axios.setToken(token, 'Bearer')
     commit('setToken', token)

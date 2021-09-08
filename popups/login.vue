@@ -121,6 +121,7 @@ export default {
             height: 70px;
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
+                background-color: black;
             &__close{
                 display: flex;
                 width: 30px;
