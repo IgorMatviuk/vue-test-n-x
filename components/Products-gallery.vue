@@ -1,8 +1,6 @@
 <template>
     <div class="product-gallery">
         <ProductCard
-            v-for="product in 5"
-            :key="product"
         />
     </div>
 </template>
@@ -14,7 +12,8 @@ import ProductCard from './blocks/ProductCard.vue'
 export default {
     components: {
         ProductCard
-    }
+    },
+    
 }
 </script>
 
@@ -24,4 +23,4 @@ export default {
         justify-content: space-between;
         margin: 50px 100px 0px 100px;
     }
-</style>
+</style>            

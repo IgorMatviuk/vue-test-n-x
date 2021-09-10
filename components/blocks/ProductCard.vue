@@ -4,18 +4,16 @@
           <div class="p-card__header__price">
               <p>Какой-то продукт</p>
           </div>
+          <!-- -->
+
+          <!-- -->
       </div>
   </div>
 </template>
 
 <script>
 export default {
-    methods: {
-        openProductPage() {
-            const id = 'test'
-            this.$router.push(`/product-page/${id}`)
-        }
-    }
+
 }
 </script>
 

@@ -20,11 +20,24 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '@/assets/style/UI.scss'
+    '@/assets/style/UI.scss',
     ],
+
+    babel:{
+      "plugins": [["component", [
+        {
+          "libraryName": "element-ui",
+          "styleLibraryName": "theme-default"
+        },
+        'transform-async-to-generator',
+        'transform-runtime'
+      ]]],
+      comments: true
+    },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~/plugins/axios'
+    '~/plugins/axios',
+    { src: '~plugins/element-ui', ssr: true }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

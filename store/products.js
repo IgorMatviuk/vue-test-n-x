@@ -1,4 +1,4 @@
-const backAPI = 'http://localhost:55034/'
+const backAPI = 'http://localhost:54049/'
 
 export const state = () => ({
     products: []
@@ -14,32 +14,46 @@ export const mutations = {
 }
   
 export const actions = {
+
+
+    /* */
     async fetch({commit}) {
-        try {
-          const products = await this.$axios.$get(`/${backAPI}/backend/products/marketer`)
-          commit('setProducts', products)
-        } catch (e) {
-          commit('Error', e)
-          throw e
-        }
-    },
-    async fetchById({commit}, id) {
-        try {
-          return await this.$axios.$get()
-        } catch (e) {
-          commit('Error', e)
-          throw e
-        }
-    },
-    async create({commit}, {data}) {
       try {
-        return await this.$axios.$post(`${backAPI}/backend/products/marketer`, data),
-        commit('addProducts', data);
+        const products = await this.$axios.$get(`${backAPI}backend/products`)
+        commit('setProducts', products)
       } catch (e) {
         commit('Error', e)
         throw e
       }
+  },
+    
+    /* */ 
+    async fetchById({commit}, id) {
+      try {
+        return await this.$axios.$get(`${backAPI}backend/products/${id}`)
+      } catch (e) { 
+        commit('setError', e, {root: true})
+        throw e
+      }
     },
+
+    /* */
+    async create({commit}, {title, price, image, description}) {
+      try {
+        const fd = new FormData()
+
+        fd.append('title', title)
+        fd.append('price', price)
+        fd.append('description', description)
+        fd.append('image', image)
+  
+        return await this.$axios.$post(`${backAPI}backend/products/marketer`, fd)
+      } catch (e) {
+        commit('setError', e, {root: true})
+        throw e
+      }
+    },
+    /* */
     async delete({commit}, {id}) {
       try {
         return await this.$axios.$delete()

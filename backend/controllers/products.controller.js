@@ -5,11 +5,11 @@ module.exports.create = async (req, res) => {
       title: req.body.title,
       price: req.body.price,
       description: req.body.description,
-        imageUrl: `/${req.file.filename}`
+      imageUrl: `/${req.file.filename}`
   })
 
   try {
-    await  product.save()
+    await product.save()
     res.status(201).json( product)
   } catch (e) {
     res.status(500).json(e)
@@ -20,7 +20,7 @@ module.exports.getAll = async (req, res) => {
   try {
     const  products = await Product.find().sort({date: -1})
     res.json( products)
-  } catch (e) {
+  } catch (e) { 
     res.status(500).json(e)
   }
 }
@@ -52,7 +52,7 @@ module.exports.update = async (req, res) => {
 module.exports.remove = async (req, res) => {
   try {
     await Product.deleteOne({_id: req.params.id})
-    res.json({message: 'Пост удален'})
+    res.json({message: 'Продукт удален'})
   } catch (e) {
     res.status(500).json(e)
   }
