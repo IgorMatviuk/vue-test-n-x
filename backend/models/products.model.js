@@ -21,6 +21,57 @@ const productSchema = new Schema({
     type: Number,
     default: 0
   },
+  brand: {
+    type: String,
+  },
+  model: {
+    type: String,
+  },
+  size: {
+    type: String,
+  },
+  color: {
+    type: String,
+  },
+  material: {
+    type: String,
+  },
+  year: {
+    type: String,
+  },
+  manufacturerСountry: {
+    type: String,
+  },
+  volume: {
+    type: String,
+  },
+  alcohol: {
+    type: String,
+  },
+  Memory: {
+    type: String,
+  },
+  speed: {
+    type: String,
+  },
+  weight: {
+    type: String,
+  },
+  width: {
+    type: String,
+  },
+  type: {
+    type: String,
+  },
+  season: {
+    type: String,
+  },
+  state: {
+    type: String,
+  },
+  shoeType: {
+    type: String,
+  },
   imageUrl: String,
   comments: [
       {

@@ -1,5 +1,6 @@
 <template>
   <div class="main-page">
+    <Main :products = "products"/>
     <!--
     <div
       v-for="product in products"
@@ -13,11 +14,9 @@
         <div>{{product.title}}</div>
     </div>
   -->
-    <ProductCard
-      v-for="product in products"
-      :key="product._id"
-      :product="product"
-    />
+
+
+    <!--
         <div v-for="(product, index) in products" :key="index">
           <div>{{ product.price }}</div>
           <div>
@@ -26,15 +25,16 @@
             :src="product.imageUrl"
           >
         </div>
-          <nuxt-link :to="`/product-page/${id}`">
-              {{ product.title }}
-            </nuxt-link>
+          <div @click="open(product._id)">
+                        {{ product.title }}
+          </div>
           </div>
           <div class="max-width:500px">
             <p>{{ product.description }}
             </p>
             </div>
         </div>
+        -->
   </div>
 </template>
 <script>
@@ -50,15 +50,20 @@ export default {
 
     }
   },
-    async asyncData({ $axios }) {
-      const products = await $axios.$get('http://localhost:54049/backend/products')
-      return { products }
+    async asyncData({store}) {
+      const products = await store.dispatch('products/fetch')
+      return {products}
     },
       head () {
     return {
       title: 'Products'
     }
   },
+    methods: {
+    open(id) {
+      this.$router.push(`/product-page/${id}`)
+    },
+  }
 }
 </script>
 

@@ -14,53 +14,7 @@
 
         <div class="header__container__right__lang">
           <div class="header__container__right__lang__select">
-            <!--
-            <select name="" id="">
-              <option value="">    
-                <nuxt-link
-                v-if="$i18n.locale !== 'en'"
-                :to="switchLocalePath('en')"
-                >English
-                </nuxt-link>
-                </option>
-              <option value="">
-                <nuxt-link
-                  v-if="$i18n.locale !== 'ru'"
-                  :to="switchLocalePath('ru')"
-                >Русский
-                </nuxt-link>
-              </option>
-              <option value="">
-                <nuxt-link
-                  v-if="$i18n.locale !== 'is'"
-                  :to="switchLocalePath('is')"
-                  >Меджусловјанскы
-                  </nuxt-link>
-                </option>
-            </select>
-            -->
-
-            <!--
-    <nuxt-link
-      v-if="$i18n.locale !== 'en'"
-      :to="switchLocalePath('en')"
-    >
-      English
-    </nuxt-link>
-
-    <nuxt-link
-      v-if="$i18n.locale !== 'ru'"
-      :to="switchLocalePath('ru')"
-    > 
-      Русский
-    </nuxt-link>
-        <nuxt-link
-      v-if="$i18n.locale !== 'is'"
-      :to="switchLocalePath('is')"
-    >
-      Меджусловјанскы
-    </nuxt-link>
--->     <div style="color: #FFFFFF;"><h3>{{ $t("lang") }}</h3></div>
+      <div style="color: #FFFFFF;"><h3>{{ $t("lang") }}</h3></div>
         <select v-model="$i18n.locale">
       <option v-for="(lang, i) in langs" :key="`Lang${i}`" :value="lang" >
         {{ lang }}

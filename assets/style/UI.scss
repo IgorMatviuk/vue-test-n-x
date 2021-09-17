@@ -7,10 +7,16 @@ $theme-color: black;
     background: linear-gradient(119deg, rgba(192,57,43,1) 37%, rgba(231,76,60,1) 86%);
 }
 
+.global-container{
+    display: flex;
+    flex-direction: column;
+    margin: 0px 300px 0px 300px;
+}
+
 .based-button{
     display: flex;
     justify-content: center;
-    width: auto;
+    width: 200px;
     height: 30px;
     background-color: $theme-color;
     color: #FFFFFF;
@@ -22,6 +28,22 @@ $theme-color: black;
     margin: 0px 10px 0px 10px;
     font-family: 'Roboto', sans-serif;
     color: #FFFFFF;
+}
+
+.based-button-black{
+    display: flex;
+    width: 200px;
+    justify-content: center;
+    height: 30px;
+    background-color: #FFFFFF;
+    border: solid 2px black;
+    border-radius: 15px;
+}
+
+.based-button-black p{
+    margin: 0px 10px 0px 10px;
+    font-family: 'Roboto', sans-serif;
+    color: black;
 }
 
 .popup-close{

@@ -34,6 +34,7 @@
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "v": "^0.3.0",
+    "vue-carousel": "^0.18.0",
     "vue-country-flag": "^2.2.0",
     "vue-draggable-resizable": "^2.3.0"
   },
@@ -43,6 +44,7 @@
     "pug": "^3.0.2",
     "pug-plain-loader": "^1.1.0",
     "sass": "^1.38.0",
-    "sass-loader": "^10.2.0"
+    "sass-loader": "^10.2.0",
+    "vivus": "^0.4.6"
   }
 }

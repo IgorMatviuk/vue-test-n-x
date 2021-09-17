@@ -1,4 +1,4 @@
-const backAPI = 'http://localhost:54049/'
+const backAPI = 'http://localhost:57878/'
 
 export const state = () => ({
     products: []
@@ -15,16 +15,13 @@ export const mutations = {
   
 export const actions = {
 
-
-    /* */
-    async fetch({commit}) {
-      try {
-        const products = await this.$axios.$get(`${backAPI}backend/products`)
-        commit('setProducts', products)
-      } catch (e) {
-        commit('Error', e)
-        throw e
-      }
+  async fetch({commit}) {
+    try {
+      return await this.$axios.$get(`${backAPI}backend/products`)
+    } catch (e) {
+      commit('setError', e, {root: true})
+      throw e
+    }
   },
     
     /* */ 
@@ -41,8 +38,7 @@ export const actions = {
     async create({commit}, {title, price, image, description}) {
       try {
         const fd = new FormData()
-
-        fd.append('title', title)
+        fd.append('title', title) 
         fd.append('price', price)
         fd.append('description', description)
         fd.append('image', image)
@@ -62,6 +58,15 @@ export const actions = {
         throw e
       }
     },
+
+    async addView({commit}, {views, _id}) {
+      try {
+        return await this.$axios.$put(`${backAPI}backend/products/add/view/${_id}`, {views})
+      } catch (e) {
+        commit('setError', e, {root: true})
+        throw e
+      }
+    }
 }
 
 export const getters = {

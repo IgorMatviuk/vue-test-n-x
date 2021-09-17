@@ -2,7 +2,7 @@ import Cookie from 'cookie'
 import Cookies from "js-cookie"
 import jwtDecode from 'jwt-decode'
 
-const backAPI = 'http://localhost:54049/'
+const backAPI = 'http://localhost:61276/'
 
 export const state = () => ({
   token: null
